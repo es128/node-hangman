@@ -1,5 +1,5 @@
 {
-  "name": "node-hangman",
+  "name": "hangman",
   "version": "0.1.0",
   "description": "Prevents hung node.js processes",
   "main": "index.js",
