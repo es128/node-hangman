@@ -26,5 +26,8 @@
   "devDependencies": {
     "coffee-script": "^1.8.0",
     "mocha": "^1.21.4"
+  },
+  "dependencies": {
+    "timer-stopwatch": "^0.1.5"
   }
 }
