@@ -5,7 +5,7 @@ var Stopwatch = require('timer-stopwatch');
 function Hangman(timeLimit) {
   if (!timeLimit) { timeLimit = 60000; }
   var timer = new Stopwatch(timeLimit, {
-    refreshRate: ~~(timeLimit / 10) || 10
+    refreshRate: Math.floor(timeLimit / 10) || 10
   });
   timer.on('done', function() {
     process.exit(1);
