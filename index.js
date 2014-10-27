@@ -15,10 +15,12 @@ function Hangman(timeLimit, callback) {
     process.exit(1);
   });
   timer.start();
-  return function() {
-    timer.reset(timeLimit);
+  function heartbeat() {
+    timer.reset();
     timer.start();
-  };
+  }
+  heartbeat.cancel = timer.stop;
+  return heartbeat;
 }
 
 module.exports = Hangman;
