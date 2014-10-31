@@ -31,8 +31,8 @@ function Hangman(timeLimit, callback) {
     var stdin = monitor.stdin;
     timer = {
       start: Function.prototype,
-      stop: stdin.write.bind(stdin, {stop: true}),
-      reset: stdin.write.bind(stdin, {reset: true})
+      stop: stdin.write.bind(stdin, JSON.stringify({stop: true})),
+      reset: stdin.write.bind(stdin, JSON.stringify({reset: true}))
     };
   }
   function heartbeat() {
