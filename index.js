@@ -6,9 +6,15 @@ var Stopwatch = require('timer-stopwatch');
 var stdout = new (require('fixture-stdout'))();
 
 var monitor;
-function getMonitor() {
-  return monitor = monitor ||
-    spawn(path.join(__dirname, 'monitor.js'), [], { stdio: ['pipe', 1, 2] });
+function getMonitor(timeLimit) {
+  if (monitor) { return monitor; }
+  var monitorPath = path.join(__dirname, 'monitor.js');
+  monitor = spawn(monitorPath, [], { stdio: ['pipe', 1, 2] });
+  monitor.stdin.write(JSON.stringify({
+    timeLimit: timeLimit,
+    pid: process.pid
+  }));
+  return monitor;
 }
 
 function Hangman(timeLimit, callback) {
@@ -25,7 +31,7 @@ function Hangman(timeLimit, callback) {
     timer.on('done', callback);
     timer.start();
   } else {
-    getMonitor();
+    getMonitor(timeLimit);
     var stdin = monitor.stdin;
     timer = {
       start: Function.prototype,
