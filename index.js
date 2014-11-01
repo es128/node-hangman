@@ -22,9 +22,7 @@ function Hangman(timeLimit, callback) {
     timer = new Stopwatch(timeLimit, {
       refreshRate: Math.floor(timeLimit / 10) || 10
     });
-    timer.on('done', callback || function() {
-      process.exit(1);
-    });
+    timer.on('done', callback);
     timer.start();
   } else {
     getMonitor();
