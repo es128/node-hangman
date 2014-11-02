@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var hangman = require('./');
+var hangman = require('./hangman');
 var monitor;
 
 process.stdin.on('data', function(msg){

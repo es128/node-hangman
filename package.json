@@ -2,7 +2,7 @@
   "name": "hangman",
   "version": "0.1.0",
   "description": "Prevents hung node.js processes",
-  "main": "index.js",
+  "main": "hangman.js",
   "scripts": {
     "test": "mocha"
   },
