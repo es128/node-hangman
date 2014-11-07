@@ -2,10 +2,11 @@
 'use strict';
 
 var hangman = require('./hangman');
+var split = require('split');
 var monitor;
 
-process.stdin.on('data', function(msg){
-	if (!hangman) {
+process.stdin.pipe(split()).on('data', function(msg){
+	if (!monitor) {
 		var msgObj;
 		try {
 			msgObj = JSON.parse(msg);

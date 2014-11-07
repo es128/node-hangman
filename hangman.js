@@ -13,7 +13,7 @@ function getMonitor(timeLimit) {
 	monitor.stdin.write(JSON.stringify({
 		timeLimit: timeLimit,
 		pid: process.pid
-	}));
+	}) + '\n');
 	return monitor;
 }
 
@@ -35,8 +35,8 @@ function Hangman(timeLimit, callback) {
 		var stdin = monitor.stdin;
 		timer = {
 			start: Function.prototype,
-			stop: stdin.write.bind(stdin, 'stop'),
-			reset: stdin.write.bind(stdin, 'reset')
+			stop: stdin.write.bind(stdin, 'stop\n'),
+			reset: stdin.write.bind(stdin, 'reset\n')
 		};
 	}
 	function heartbeat() {
