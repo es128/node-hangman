@@ -3,7 +3,7 @@
 var spawn = require('child_process').spawn;
 var path = require('path');
 var Stopwatch = require('timer-stopwatch');
-var stdout = new (require('fixture-stdout'))();
+var fixtureStdout = require('fixture-stdout');
 
 var monitor;
 function getMonitor(timeLimit) {
@@ -23,12 +23,12 @@ function Hangman(timeLimit, callback) {
 		timeLimit = void 0;
 	}
 	if (!timeLimit) { timeLimit = 60000; }
+	var stdout = new fixtureStdout();
 	var timer;
 	if (callback) {
 		timer = new Stopwatch(timeLimit, {
 			refreshRate: Math.floor(timeLimit / 10) || 10
-		});
-		timer.on('done', callback);
+		}).on('done', stdout.release).on('done', callback);
 		timer.start();
 	} else {
 		getMonitor(timeLimit);
