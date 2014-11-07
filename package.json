@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "Prevents hung node.js processes",
   "main": "hangman.js",
-  "scripts": {
-    "test": "mocha"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/es128/node-hangman"
@@ -23,10 +20,6 @@
     "url": "https://github.com/es128/node-hangman/issues"
   },
   "homepage": "https://github.com/es128/node-hangman",
-  "devDependencies": {
-    "coffee-script": "^1.8.0",
-    "mocha": "^1.21.4"
-  },
   "dependencies": {
     "fixture-stdout": "^0.2.1",
     "split": "^0.3.1",
