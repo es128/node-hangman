@@ -58,6 +58,7 @@ You can create multiple instances to monitor different things.
 var hangman = require('hangman');
 var stdoutMonitor = hangman();
 var appMonitor = hangman(30000, function() {
+	// note that using console.log here would actually trip the stdoutMonitor
 	console.log('The app has not checked in for 30 seconds.')
 });
 ```
