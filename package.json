@@ -16,7 +16,9 @@
     "hung",
     "process",
     "kill",
-    "terminate"
+    "terminate",
+    "forever",
+    "PM2"
   ],
   "author": "Elan Shanker",
   "license": "ISC",
