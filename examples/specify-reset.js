@@ -1,6 +1,6 @@
 var hangmanReset = require('../hangman')(3000);
 
-console.log('Hangman initiated with a 3s timeout and custom callback');
+console.log('Hangman initiated with a 3s timeout');
 console.log('Using app-specific timer reset which cancels stdout monitoring');
 hangmanReset();
 var i = 0;
