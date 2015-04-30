@@ -49,7 +49,7 @@ not continue monitoring after the callback has been called; it is up to you to
 initiate new instances.
 ```js
 require('hangman')(function() {
-	console.log('All is quiet on the western front.');
+	console.log('All quiet on the western front.');
 });
 ```
 
