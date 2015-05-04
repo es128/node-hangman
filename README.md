@@ -63,6 +63,13 @@ var appMonitor = hangman(30000, function() {
 });
 ```
 
+A hangman monitor instance can be canceled and resumed.
+```js
+var stdoutMonitor = require('hangman')();
+stdoutMonitor.cancel();
+stdoutMonitor.resume();
+```
+
 
 License
 -------
