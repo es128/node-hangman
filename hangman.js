@@ -49,7 +49,7 @@ function Hangman(timeLimit, callback) {
 		heartbeat();
 		stay = heartbeat;
 	};
-	stay.cancel = heartbeat.cancel = timer.stop;
+	stay.cancel = timer.stop.bind(timer);
 	return stay;
 }
 
