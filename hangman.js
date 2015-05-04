@@ -50,6 +50,7 @@ function Hangman(timeLimit, callback) {
 		stay = heartbeat;
 	};
 	stay.cancel = timer.stop.bind(timer);
+	stay.resume = heartbeat;
 	return stay;
 }
 
